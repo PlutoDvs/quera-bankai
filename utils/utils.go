@@ -22,7 +22,7 @@ func HashPassword(pass string) (string, error) {
 	return string(hash), err
 }
 
-// ValidatePassword compares given passwor with hashed password
+// ValidatePassword compares given password with hashed password
 func ValidatePassword(givenPass, pass string) bool {
 	return bcrypt.CompareHashAndPassword([]byte(givenPass), []byte(pass)) == nil
 }
